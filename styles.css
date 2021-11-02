@@ -1,3 +1,26 @@
-h1 { 
-    color:#A52A2A
+* {
+    margin : 0;
+    padding: 0;
+}
+.calendar {
+    width: 400px;
+    margin : 20px auto;
+}
+
+li { 
+    list-style-type: none;
+}
+.top {
+    background-color:rgb(65, 245, 236);
+    color: rgb(255, 255, 255);
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+.top h1 {
+    text-align: center
+}
+
+.top ul {
+    display: flex;
+    justify-content: space-between;
 }
