@@ -16,10 +16,13 @@ function generateRandomNumber()  {
             answer.innerHTML = 'Validation error (min element bigger than max element)';
             break; 
         case isNaN(max) || isNaN(min):
-            answer.innerHTML = 'Validation error (min element or max element are not a numer)';
+            answer.innerHTML = 'Validation error (min element or max element are not a number)';
             break;
-        case Object.keys(generatedNumbers).length === max-min+1:
+        case Object.keys(generatedNumbers).length === max - min + 1:
             answer.innerHTML = 'Elements are over';
+            generateButton.disabled = true;
+            generateButton.style.opacity = 0.4;
+            break;
         default:
             randomNum = retunRandomNumber(min, max); 
             if (!generatedNumbers[randomNum]) {
@@ -29,7 +32,7 @@ function generateRandomNumber()  {
             else { 
                 randomNum = retunRandomNumber(min, max);
             }
-
+            break;
     }
 
 }
@@ -38,6 +41,9 @@ function retunRandomNumber(min, max) {
 }
 function reset() {
     generatedNumbers = {};
+    generateButton.disabled = false;
+    generateButton.style.opacity = 1;
     maxNumImput.value = '';
     minNumImput.value = '';
+    answer.innerHTML = '';
 }
